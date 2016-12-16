@@ -7,6 +7,10 @@ var router = require('express').Router();
 router.get("/",function(req,res){
     res.json({"error" : false,"message" : "Hello World"});
 });
+// Router for users, posts, category
 router.use('/users', require('./user/userRoutes'));
- 
+// router.use('/posts', require('./post/postRoutes'));
+// router.use('/category', require('./category/categoryRoutes'));
+
+
 module.exports = router;
