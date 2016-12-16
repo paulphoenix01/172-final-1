@@ -13,6 +13,8 @@ mongoose.connect(config.db.url);
  app.use(bodyParser.json());
 
 
+
+
 //In a large application, 
 //things could easily get out of control 
 //if we keep adding code to a single 
@@ -20,6 +22,11 @@ mongoose.connect(config.db.url);
 // So  move the routes-related code 
 //into  api module .
 app.use('/api/', api);
+
+
+app.use(function(err,req,res,next){
+        console.error(err.stack)
+        res.status(500).send("Some Errors Happened!")});
 
 // API endpoints such as below has been moved to user Router within api module
 //app.get('/user', function(req, res) {

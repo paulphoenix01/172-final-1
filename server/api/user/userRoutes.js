@@ -10,6 +10,13 @@ router.route('/')
   .get(function(req, res){
     console.log('Hey from user!!');
     res.send({ok: true});
+  })
+  .delete(function(req,res,next){
+	var err = new Error('Trigger Error');
+	next(err);
+  })
+  .put(function(req,res,next){
+	var err = new Error('Trigger Error');
+	next(err);
   });
-
 module.exports = router;
