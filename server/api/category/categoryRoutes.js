@@ -3,7 +3,7 @@ var category = require('./categoryModel');
 
 
 router.param('category_id', function(req, res, next){
-	post.findOne({'_id': req.params.category_id},
+	category.findOne({'_id': req.params.category_id},
 		function(err,theCate){
 			if(theCate){	// Found post
 				req.category_id = req.params.category_id;
