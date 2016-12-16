@@ -23,7 +23,7 @@ mongoose.connect(config.db.url);
 //into  api module .
 app.use('/api/', api);
 
-
+// Global Middleware that will handle the Error
 app.use(function(err,req,res,next){
         console.error(err.stack)
         res.status(500).send("Some Errors Happened!")});

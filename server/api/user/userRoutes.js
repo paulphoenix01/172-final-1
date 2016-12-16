@@ -11,6 +11,7 @@ router.route('/')
     console.log('Hey from user!!');
     res.send({ok: true});
   })
+// Delete and Put will trigger error. Get return Hello normally
   .delete(function(req,res,next){
 	var err = new Error('Trigger Error');
 	next(err);
