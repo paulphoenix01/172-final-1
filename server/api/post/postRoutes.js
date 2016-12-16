@@ -62,6 +62,6 @@ function getPosts(res){
 	})
 };
 
-// setup boilerplate route jsut to satisfy a request
-// for building
+
+
 module.exports = router;
